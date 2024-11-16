@@ -9,7 +9,7 @@ import './index.css';
 import { App } from './components/App/App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/e-pharmacy-front'>
     <React.StrictMode>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
