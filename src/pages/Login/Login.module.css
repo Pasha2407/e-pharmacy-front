@@ -67,7 +67,7 @@ main {
 
 .Form a {
     text-align: center;
-    color: gray;
+    color: rgb(141, 141, 141);
 }
 
 .Error>p {
