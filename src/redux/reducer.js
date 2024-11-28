@@ -2,6 +2,7 @@ import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
 
 import { authReducer } from './auth/authSlice';
+import { ordersReducer } from './orders/ordersSlice';
 
 const authPersistConfig = {
     key: 'auth',
@@ -11,4 +12,5 @@ const authPersistConfig = {
 
 export const reducer = {
     auth: persistReducer(authPersistConfig, authReducer),
+    orders: ordersReducer,
 };

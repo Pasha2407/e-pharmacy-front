@@ -1,0 +1,9 @@
+.Container {
+    padding: 20px 40px;
+}
+
+.Ivents {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

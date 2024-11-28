@@ -23,7 +23,7 @@ export const Login = () => {
     dispatch(loginThunk(values))
       .unwrap()
       .then(() => {
-        navigate("/admin");
+        navigate("/admin/dashboard");
       })
       .catch((error) => {
         console.error("Login failed:", error);
@@ -75,7 +75,7 @@ export const Login = () => {
                     <small>Maybe wrong password or email</small>
                   </div>
                 )}
-                <NavLink to="/admin">Log in as a guest</NavLink>
+                <NavLink to="/admin/dashboard">Log in as a guest</NavLink>
               </Form>
             )}
           </Formik>
