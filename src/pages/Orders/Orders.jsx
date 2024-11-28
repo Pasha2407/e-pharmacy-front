@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import css from "./Orders.module.css";
 import {
   selectGetOrders,
   selectOrdersError,
   selectOrdersIsLoading,
 } from "../../redux/orders/ordersSelectors";
 import { ordersThunk } from "../../redux/orders/ordersServices";
+import { OrdersTable } from "../../components/Tables/OrdersTable/OrdersTable";
 
 export const Orders = () => {
   const dispatch = useDispatch();
@@ -19,12 +21,11 @@ export const Orders = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      Orders
+    <div className={css.Container}>
       {isLoading && !error ? (
         <i>Loading...</i>
       ) : (
-        orders?.map((item) => <div key={item._id}>{item.name}</div>)
+        <OrdersTable ordersData={orders} />
       )}
     </div>
   );
