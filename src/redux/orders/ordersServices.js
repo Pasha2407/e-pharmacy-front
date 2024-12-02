@@ -6,9 +6,14 @@ export const instance = axios.create({
 });
 
 export const ordersThunk = createAsyncThunk('/orders',
-    async (_, thunkApi) => {
+    async ({ userName = '', page = 1, limit = 5 }, thunkApi) => {
+        const params = {
+            userName,
+            page,
+            limit,
+        };
         try {
-            const { data } = await instance.get('/orders');
+            const { data } = await instance.get('/orders', { params });
             return data;
         } catch (error) {
             return thunkApi.rejectWithValue(error.message);
