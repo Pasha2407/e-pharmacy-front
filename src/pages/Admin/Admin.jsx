@@ -51,7 +51,8 @@ export const Admin = () => {
       <main>
         <aside>
           <NavLink to="dashboard">D</NavLink>
-          <NavLink to="orders">AO</NavLink>
+          <NavLink to="orders">O</NavLink>
+          <NavLink to="products">P</NavLink>
         </aside>
         <Outlet />
       </main>
