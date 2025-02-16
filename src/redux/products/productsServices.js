@@ -5,7 +5,8 @@ export const instance = axios.create({
     baseURL: 'http://localhost:4000/api',
 });
 
-export const productsThunk = createAsyncThunk('/products',
+export const productsThunk = createAsyncThunk(
+    '/products/getProducts',
     async ({ fieldName = '', page = 1, limit = 5 }, thunkApi) => {
         const params = {
             fieldName,

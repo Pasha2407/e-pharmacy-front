@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import css from "./Filter.module.css";
-import { useDispatch } from "react-redux";
-import { setUserName } from "../../redux/orders/ordersSlice";
+import React, { useState } from 'react';
+import css from './Filter.module.css';
+import { useDispatch } from 'react-redux';
+import { setUserName } from '../../redux/orders/ordersSlice';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -16,9 +16,9 @@ export const Filter = () => {
   };
 
   const handleClear = (event) => {
-    const form = event.currentTarget.closest("form");
+    const form = event.currentTarget.closest('form');
     form.reset();
-    dispatch(setUserName({ userName: "" }));
+    dispatch(setUserName({ userName: '' }));
     setFilterOn(false);
   };
 

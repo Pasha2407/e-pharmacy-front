@@ -1,22 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './redux/store'
-import { BrowserRouter } from 'react-router-dom';
 
-import './index.css';
-import { App } from './components/App/App';
+import { store, persistor } from './redux/store'
+import { App } from './App';
+import './index.scss';
+
+const router = createBrowserRouter([
+  {
+    path: '*',
+    element: <App />,
+  },
+], {
+  future: {
+    v7_startTransition: true,
+    v7_relativeSplatPath: true,
+    v7_fetcherPersist: true,
+    v7_normalizeFormMethod: true,
+    v7_partialHydration: true,
+    v7_skipActionErrorRevalidation: true
+  }
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename='/e-pharmacy-front'>
-    <React.StrictMode>
-      <Provider store={store}>
-        <PersistGate persistor={persistor}>
-          <App />
-        </PersistGate>
-      </Provider>
-    </React.StrictMode>
-  </BrowserRouter>
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <RouterProvider router={router} />
+    </PersistGate>
+  </Provider>
 );
 
