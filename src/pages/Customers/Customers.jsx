@@ -1,5 +1,14 @@
 import { Container } from 'components/Container/Container';
+import { TableContainer } from 'components/TableContainer/TableContainer';
+import s from './Customers.module.scss';
 
 export const Customers = () => {
-  return <Container>CustomersPage</Container>;
+  return (
+    <Container>
+      CustomersPage
+      <section className={s.tables}>
+        <TableContainer title="Customers Data">Table</TableContainer>
+      </section>
+    </Container>
+  );
 };

@@ -13,8 +13,10 @@ import { ordersThunk } from '../../redux/orders/ordersServices';
 import { setPage } from '../../redux/orders/ordersSlice';
 
 import { Container } from 'components/Container/Container';
-import { Filter } from 'components/Filter/Filter';
+import { Search } from 'components/Search/Search';
+import { TableContainer } from 'components/TableContainer/TableContainer';
 import { OrdersTable } from 'components/Tables/OrdersTable/OrdersTable';
+import s from './Orders.module.scss';
 
 export const Orders = () => {
   const dispatch = useDispatch();
@@ -34,13 +36,19 @@ export const Orders = () => {
 
   return (
     <Container>
-      <Filter />
-      {isLoading && !error ? (
-        <i>Loading...</i>
-      ) : (
-        <OrdersTable ordersData={orders} />
-      )}
-      <div>
+      <section className={s.search}>
+        <Search placeholder={'User Name'} />
+      </section>
+      <section className={s.table}>
+        <TableContainer title="All orders">
+          {isLoading && !error ? (
+            <i>Loading...</i>
+          ) : (
+            <OrdersTable ordersData={orders} />
+          )}
+        </TableContainer>
+      </section>
+      <section className={s.pagination}>
         <button
           disabled={page === 1}
           onClick={() => handlePageChange(page - 1)}
@@ -49,7 +57,7 @@ export const Orders = () => {
         </button>
         <span>Page {page}</span>
         <button onClick={() => handlePageChange(page + 1)}>Next</button>
-      </div>
+      </section>
     </Container>
   );
 };
