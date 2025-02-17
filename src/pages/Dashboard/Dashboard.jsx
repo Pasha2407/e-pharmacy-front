@@ -1,8 +1,8 @@
-import { Container } from '../Container/Container';
-import { DashboardIvent } from '../DashboardIvent/DashboardIvent';
-import s from './DashboardPage.module.scss';
+import { Container } from 'components/Container/Container';
+import { DashboardIvent } from 'components/DashboardIvent/DashboardIvent';
+import s from './Dashboard.module.scss';
 
-export const DashboardPage = () => {
+export const Dashboard = () => {
   return (
     <Container>
       <section className={s.ivents}>
