@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/e-pharmacy-front/static/js/main.e4f32717.js",
+    "main.js": "/e-pharmacy-front/static/js/main.f2d60830.js",
     "index.html": "/e-pharmacy-front/index.html",
-    "main.e4f32717.js.map": "/e-pharmacy-front/static/js/main.e4f32717.js.map"
+    "main.f2d60830.js.map": "/e-pharmacy-front/static/js/main.f2d60830.js.map"
   },
   "entrypoints": [
-    "static/js/main.e4f32717.js"
+    "static/js/main.f2d60830.js"
   ]
 }
