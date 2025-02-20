@@ -11,16 +11,12 @@ import './index.scss';
 const router = createBrowserRouter(
   [
     {
-      path: '/',
-      element: <App />,
-    },
-    {
       path: '*',
       element: <App />,
     },
   ],
   {
-    basename: process.env.PUBLIC_URL || '/e-pharmacy-front',
+    basename: '/e-pharmacy-front',
     future: {
       v7_startTransition: true,
       v7_relativeSplatPath: true,
