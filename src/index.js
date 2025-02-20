@@ -14,6 +14,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
 ], {
+  basename: '/e-pharmacy-front',
+}, {
   future: {
     v7_startTransition: true,
     v7_relativeSplatPath: true,
