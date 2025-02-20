@@ -11,7 +11,7 @@ import './index.scss';
 const router = createBrowserRouter(
   [
     {
-      path: '*',
+      path: '/*',
       element: <App />,
     },
   ],

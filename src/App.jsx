@@ -14,17 +14,17 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Navigate to="/login" replace />} />
+        <Route index element={<Navigate to="login" replace />} />
         <Route path="login" element={<Login />} />
         <Route path="admin" element={<Admin />}>
-          <Route index element={<Navigate to="/admin/dashboard" replace />} />
+          <Route index element={<Navigate to="dashboard" replace />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="orders" element={<Orders />} />
           <Route path="products" element={<Products />} />
           <Route path="suppliers" element={<Suppliers />} />
           <Route path="customers" element={<Customers />} />
         </Route>
-        <Route path="*" element={<Navigate to="/login" />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Route>
     </Routes>
   );
