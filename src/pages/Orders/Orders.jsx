@@ -15,7 +15,9 @@ import { setPage } from '../../redux/orders/ordersSlice';
 import { Container } from 'components/Container/Container';
 import { Search } from 'components/Search/Search';
 import { TableContainer } from 'components/TableContainer/TableContainer';
-import { OrdersTable } from 'components/Tables/OrdersTable/OrdersTable';
+import { Table } from 'components/Table/Table';
+
+import titles from 'shared/data/orderTitles.json';
 import s from './Orders.module.scss';
 
 export const Orders = () => {
@@ -44,7 +46,7 @@ export const Orders = () => {
           {isLoading && !error ? (
             <i>Loading...</i>
           ) : (
-            <OrdersTable ordersData={orders} />
+            <Table columns={titles.columns} data={orders} />
           )}
         </TableContainer>
       </section>

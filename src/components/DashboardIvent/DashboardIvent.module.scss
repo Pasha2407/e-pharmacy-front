@@ -2,7 +2,7 @@
     width: 158px;
     height: 98px;
     border-radius: 8px;
-    border: 1px solid $transparent-black;
+    border: 1px solid $light-gray;
     background-color: $white;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
 
 .title > p{
     @include font(12, 14);
-    color: $gray-text;
+    color: $gray;
 
     @include media(tablet) {
         @include font(12, 18);

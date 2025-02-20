@@ -7,9 +7,9 @@
 }
 
 .title {
-    background-color: $background2;
+    background-color: $light-green;
     padding: 20px;
-    border: 1px solid $background2;
+    border: 1px solid $light-green;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -19,11 +19,11 @@
 }
 
 .content {
-    height: 350px;
+    height: 380px;
     background-color: $white;
-    border-left: 1px solid $transparent-black;
-    border-right: 1px solid $transparent-black;
-    border-bottom: 1px solid $transparent-black;
+    border-left: 1px solid $light-gray;
+    border-right: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }

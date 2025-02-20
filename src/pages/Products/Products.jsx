@@ -13,7 +13,9 @@ import { productsThunk } from '../../redux/products/productsServices';
 import { setPage } from '../../redux/products/productsSlice';
 
 import { Container } from 'components/Container/Container';
-import { ProductsTable } from 'components/Tables/ProductsTable/ProductsTable';
+import { TableContainer } from 'components/TableContainer/TableContainer';
+import { Table } from 'components/Table/Table';
+import titles from 'shared/data/productTitles.json';
 
 export const Products = () => {
   const dispatch = useDispatch();
@@ -33,11 +35,13 @@ export const Products = () => {
 
   return (
     <Container>
-      {isLoading && !error ? (
-        <i>Loading...</i>
-      ) : (
-        <ProductsTable productsData={products} />
-      )}
+      <TableContainer title="All products">
+        {isLoading && !error ? (
+          <i>Loading...</i>
+        ) : (
+          <Table columns={titles.columns} data={products} />
+        )}
+      </TableContainer>
       <div>
         <button
           disabled={page === 1}

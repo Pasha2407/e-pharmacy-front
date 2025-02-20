@@ -5,7 +5,7 @@
     align-items: center;
     gap: 20px;
     padding: 0 20px;
-    border-bottom: 1px solid $transparent-black;
+    border-bottom: 1px solid $light-gray;
 
     @include media(tablet) {
             padding: 0 32px;
@@ -56,7 +56,7 @@
 
 .title > span {
     @include font (12, 18);
-    color: $gray-text;
+    color: $gray;
 }
 
 .logout {

@@ -4,7 +4,7 @@
     @include media(desktop) {
         width: 80px;
         height: 100%;
-        border-right: 1px solid $transparent-black;
+        border-right: 1px solid $light-gray;
         padding: 40px 18px;
         display: flex;
         flex-direction: column;

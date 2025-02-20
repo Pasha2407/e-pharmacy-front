@@ -5,7 +5,6 @@ import s from './Customers.module.scss';
 export const Customers = () => {
   return (
     <Container>
-      CustomersPage
       <section className={s.tables}>
         <TableContainer title="Customers Data">Table</TableContainer>
       </section>
