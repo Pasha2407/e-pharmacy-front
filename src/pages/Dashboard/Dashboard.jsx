@@ -1,16 +1,18 @@
 import { Container } from 'components/Container/Container';
-import { DashboardIvent } from 'components/DashboardIvent/DashboardIvent';
+import { DashboardIvents } from 'components/DashboardIvents/DashboardIvents';
 import { TableContainer } from 'components/TableContainer/TableContainer';
 import s from './Dashboard.module.scss';
+
+const dataIvent = [
+  { id: '1', title: 'All products', count: '8,430' },
+  { id: '2', title: 'All suppliers', count: '211' },
+  { id: '3', title: 'All Customers', count: '140' },
+];
 
 export const Dashboard = () => {
   return (
     <Container>
-      <section className={s.ivents}>
-        <DashboardIvent title="All products" count="8,430" />
-        <DashboardIvent title="All suppliers" count="211" />
-        <DashboardIvent title="All Customers" count="140" />
-      </section>
+      <DashboardIvents data={dataIvent} />
       <section className={s.tables}>
         <TableContainer size="small" title="Recent Customers">
           Table

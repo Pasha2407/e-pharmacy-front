@@ -16,9 +16,8 @@ import { Container } from 'components/Container/Container';
 import { Search } from 'components/Search/Search';
 import { TableContainer } from 'components/TableContainer/TableContainer';
 import { Table } from 'components/Table/Table';
-
+import { Pagination } from 'components/Pagination/Pagination';
 import titles from 'shared/data/orderTitles.json';
-import s from './Orders.module.scss';
 
 export const Orders = () => {
   const dispatch = useDispatch();
@@ -38,28 +37,15 @@ export const Orders = () => {
 
   return (
     <Container>
-      <section className={s.search}>
-        <Search placeholder={'User Name'} />
-      </section>
-      <section className={s.table}>
-        <TableContainer title="All orders">
-          {isLoading && !error ? (
-            <i>Loading...</i>
-          ) : (
-            <Table columns={titles.columns} data={orders} />
-          )}
-        </TableContainer>
-      </section>
-      <section className={s.pagination}>
-        <button
-          disabled={page === 1}
-          onClick={() => handlePageChange(page - 1)}
-        >
-          Previous
-        </button>
-        <span>Page {page}</span>
-        <button onClick={() => handlePageChange(page + 1)}>Next</button>
-      </section>
+      <Search placeholder={'User Name'} />
+      <TableContainer title="All orders">
+        {isLoading && !error ? (
+          <i>Loading...</i>
+        ) : (
+          <Table columns={titles.columns} data={orders} />
+        )}
+      </TableContainer>
+      <Pagination page={page} handlePageChange={handlePageChange} />
     </Container>
   );
 };

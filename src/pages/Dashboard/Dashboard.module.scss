@@ -1,9 +1,9 @@
-.ivents {
-    display: flex;
-    gap: 20px;
-}
-
 .tables {
     display: flex;
     gap: 20px;
+    flex-direction: column;
+
+    @include media(desktop) {
+        flex-direction: row;
+    }
 }

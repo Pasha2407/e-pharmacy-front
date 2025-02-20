@@ -4,7 +4,7 @@ import s from './TableContainer.module.scss';
 
 export const TableContainer = ({ size = 'large', title, children }) => {
   return (
-    <div
+    <section
       className={clsx({
         [s.large]: size === 'large',
         [s.small]: size === 'small',
@@ -14,6 +14,6 @@ export const TableContainer = ({ size = 'large', title, children }) => {
         <h1>{title}</h1>
       </div>
       <div className={s.content}>{children}</div>
-    </div>
+    </section>
   );
 };

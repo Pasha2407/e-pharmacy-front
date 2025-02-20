@@ -13,9 +13,13 @@ import { productsThunk } from '../../redux/products/productsServices';
 import { setPage } from '../../redux/products/productsSlice';
 
 import { Container } from 'components/Container/Container';
+import { Search } from 'components/Search/Search';
 import { TableContainer } from 'components/TableContainer/TableContainer';
 import { Table } from 'components/Table/Table';
+import { Pagination } from 'components/Pagination/Pagination';
+
 import titles from 'shared/data/productTitles.json';
+import s from './Products.module.scss';
 
 export const Products = () => {
   const dispatch = useDispatch();
@@ -35,6 +39,10 @@ export const Products = () => {
 
   return (
     <Container>
+      <section className={s.management}>
+        <Search placeholder={'Product Name'} />
+        <div>Add new</div>
+      </section>
       <TableContainer title="All products">
         {isLoading && !error ? (
           <i>Loading...</i>
@@ -42,16 +50,7 @@ export const Products = () => {
           <Table columns={titles.columns} data={products} />
         )}
       </TableContainer>
-      <div>
-        <button
-          disabled={page === 1}
-          onClick={() => handlePageChange(page - 1)}
-        >
-          Previous
-        </button>
-        <span>Page {page}</span>
-        <button onClick={() => handlePageChange(page + 1)}>Next</button>
-      </div>
+      <Pagination page={page} handlePageChange={handlePageChange} />
     </Container>
   );
 };
